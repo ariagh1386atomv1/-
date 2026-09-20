@@ -1,0 +1,1416 @@
+پروژه: ساخت قالب وردپرس «دارونیک» + Aria Builder
+
+1. هدف کلی پروژه
+
+ما در حال ساخت یک پروژه تمرینی/تحقیقاتی برای توسعه یک محصول تجاری حرفه‌ای وردپرس هستیم.
+
+نام موقت قالب:
+
+**دارونیک — Daroonik**
+
+هدف این است که یک قالب فروشگاهی مدرن برای WordPress + WooCommerce بسازیم که از نظر تجربه کاربری و ظاهر، در نسخه اول بسیار نزدیک به قالب **Daroochi** باشد، اما از نظر قابلیت ویرایش، انعطاف‌پذیری و اتصال عمیق به WordPress/WooCommerce بسیار قدرتمندتر باشد.
+
+این پروژه فعلاً فقط روی **Localhost** اجرا و تست می‌شود و بعد از تکمیل و پایدار شدن برای انتشار تجاری آماده خواهد شد.
+
+2. فلسفه اصلی پروژه
+
+ما نمی‌خواهیم یک Headless Theme ساده بسازیم.
+
+همچنین نمی‌خواهیم صرفاً یک قالب معمولی مثل WoodMart بسازیم.
+
+هدف ما ترکیب این سه ایده است:
+
+Daroochi
+
+برای:
+
+- طراحی مدرن
+- ساختار صفحات
+- ظاهر فروشگاهی
+- بخش‌های جذاب
+- کارت‌ها
+- انیمیشن‌ها
+- UX
+- Layout
+
+WoodMart
+
+برای:
+
+- سازگاری عمیق با WordPress
+- WooCommerce
+- Theme Settings
+- Customization
+- Demo Import
+- Header/Footer
+- Typography
+- Colors
+- Menus
+- Site Identity
+- WooCommerce integration
+- Compatibility با اکوسیستم WordPress
+
+Elementor / Elementor Pro
+
+برای:
+
+- تجربه Visual Builder
+- Widget System
+- Container
+- Responsive Controls
+- Content Controls
+- Style Controls
+- Advanced Controls
+- Dynamic Content
+- Drag &amp; Drop
+- Live Editing
+
+اما:
+
+**Aria Builder باید سیستم اختصاصی خودمان باشد.**
+
+3. مهم‌ترین هدف
+
+کاربر باید بتواند قالب را مانند یک قالب معمولی WordPress نصب کند.
+
+بعد از نصب:
+
+```text
+WordPress
+├── Pages
+├── Posts
+├── Media
+├── Menus
+├── Users
+├── Settings
+└── WooCommerce
+
+```
+
+همه باید کاملاً واقعی و Native باشند.
+
+همچنین:
+
+```text
+Appearance
+Theme Settings
+Site Identity
+Menus
+Widgets
+Customizer
+WooCommerce
+Products
+Categories
+Orders
+Customers
+Coupons
+Payments
+
+```
+
+نباید به خاطر معماری قالب از WordPress حذف یا محدود شوند.
+
+4. Aria Builder
+
+ما یک Visual Builder اختصاصی با نام:
+
+**Aria Builder**
+
+می‌سازیم.
+
+این Builder باید از نظر تجربه کاربری شبیه Elementor باشد اما UI آن:
+
+- مدرن‌تر
+- سریع‌تر
+- نرم‌تر
+- تمیزتر
+- ساده‌تر
+- حرفه‌ای‌تر
+- مناسب RTL
+- مناسب فارسی
+
+باشد.
+
+وقتی کاربر وارد یک برگه WordPress می‌شود:
+
+```text
+Pages
+→ Edit
+→ Edit with Aria Builder
+
+```
+
+یا در بالای صفحه:
+
+```text
+ویرایش با Aria Builder
+
+```
+
+را ببیند.
+
+با کلیک روی آن، Builder باز شود.
+
+5. رفتار Builder
+
+صفحه باید واقعاً قابل ویرایش باشد.
+
+مثلاً اگر صفحه دارای Hero باشد:
+
+```text
+Hero
+├── Container
+├── Heading
+├── Text
+├── Button
+└── Image
+
+```
+
+کاربر روی Heading کلیک کند.
+
+Aria Builder دقیقاً همان Heading واقعی را انتخاب کند.
+
+اگر متن:
+
+«بهترین محصولات مراقبت از پوست»
+
+باشد، همان متن را در پنل ویرایش نشان دهد.
+
+اگر تصویر Hero انتخاب شده باشد:
+
+با کلیک روی تصویر، همان Image Element انتخاب شود و کاربر بتواند:
+
+- تصویر را تغییر دهد
+- تصویر را حذف کند
+- تصویر جدید از Media Library انتخاب کند
+- Alt Text تنظیم کند
+- Link بدهد
+- اندازه را تغییر دهد
+- Position را تغییر دهد
+- Border Radius تغییر دهد
+- Shadow تغییر دهد
+- Responsive تنظیم کند
+
+و تغییر باید بلافاصله در Preview دیده شود.
+
+6. سه بخش تنظیمات هر Widget
+
+تمام Widgetها باید حداقل سه Tab اصلی داشته باشند:
+
+Content
+
+مثلاً برای Heading:
+
+- Text
+- HTML Tag
+- Link
+- Dynamic Content
+
+Style
+
+- Typography
+- Color
+- Background
+- Border
+- Border Radius
+- Box Shadow
+- Alignment
+- Spacing
+
+Advanced
+
+- Margin
+- Padding
+- Width
+- Position
+- Z-index
+- CSS Classes
+- CSS ID
+- Responsive
+- Visibility
+- Motion Effects
+- Custom CSS در صورت امکان
+
+این ساختار باید در تمام Widgetها استاندارد باشد.
+
+7. Elementor و Elementor Pro را مرجع کامل Widget System قرار بده
+
+من در مراحل بعدی فایل‌های:
+
+- Elementor
+- Elementor Pro
+
+را در اختیار تو قرار خواهم داد یا لینک مستقیم فایل/منبع آن‌ها را خواهم داد.
+
+تو باید آن‌ها را دقیقاً بررسی و تحلیل کنی.
+
+
+
+هدف:
+
+**Reverse Engineering قابلیت‌ها و معماری Widget System**
+
+است.
+
+برای هر Widget باید بررسی شود:
+
+- نام
+- دسته‌بندی
+- Content Controls
+- Style Controls
+- Advanced Controls
+- Responsive Controls
+- Dynamic Controls
+- Conditions
+- Repeater Controls
+- Media Controls
+- Typography
+- Spacing
+- Border
+- Shadow
+- Motion
+- Visibility
+- Link
+- Query
+- WooCommerce integration
+- سایر امکانات واقعی Widget
+
+سپس نسخه اختصاصی و مستقل Aria Builder ساخته شود.
+
+8. تمام Widgetهای Elementor + Elementor Pro
+
+در مراحل بعدی پروژه باید تمام Widgetهای قابل استفاده Elementor و Elementor Pro بررسی شوند.
+
+هدف نهایی:
+
+**Aria Builder باید از نظر تعداد و عمق قابلیت‌های Widget با Elementor/Elementor Pro قابل رقابت باشد.**
+
+یعنی صرفاً چند Widget ساده نساز.
+
+هر Widget باید قابلیت‌های واقعی خودش را داشته باشد.
+
+مثلاً:
+
+```text
+Heading
+Text Editor
+Image
+Video
+Button
+Icon
+Icon Box
+Image Box
+Gallery
+Basic Gallery
+Image Carousel
+Slides
+Form
+Accordion
+Tabs
+Toggle
+Progress Bar
+Counter
+Countdown
+Testimonials
+Reviews
+Social Icons
+Menu
+Search
+Products
+Product Categories
+Product Grid
+Product Carousel
+Posts
+Post Grid
+Post Carousel
+Loop
+Pricing
+Table
+Maps
+HTML
+Shortcode
+...
+
+```
+
+و تمام Widgetهای Pro نیز در مراحل بعدی بررسی و به سیستم اضافه شوند.
+
+9. Container System
+
+Aria Builder باید سیستم Container واقعی داشته باشد.
+
+مثلاً:
+
+```text
+Page
+└── Container
+    ├── Container
+    │   ├── Heading
+    │   └── Text
+    │
+    └── Container
+        ├── Image
+        └── Button
+
+```
+
+Container باید دارای:
+
+- Width
+- Max Width
+- Min Height
+- Direction
+- Display
+- Flex
+- Gap
+- Padding
+- Margin
+- Background
+- Border
+- Radius
+- Shadow
+- Position
+- Responsive settings
+
+باشد.
+
+10. Responsive
+
+برای تمام عناصر:
+
+```text
+Desktop
+Tablet
+Mobile
+
+```
+
+کنترل جداگانه داشته باشیم.
+
+مثلاً:
+
+```text
+Desktop:
+Font Size = 48px
+
+Tablet:
+Font Size = 36px
+
+Mobile:
+Font Size = 28px
+
+```
+
+همین سیستم برای:
+
+- Padding
+- Margin
+- Width
+- Height
+- Gap
+- Columns
+- Visibility
+- Alignment
+
+نیز اعمال شود.
+
+11. Theme باید از قبل یک سایت کامل داشته باشد
+
+قالب Daroonik نباید بعد از نصب یک صفحه خالی تحویل بدهد.
+
+بعد از نصب باید Demo Store آماده باشد.
+
+مثلاً:
+
+```text
+Home
+Shop
+Product Archive
+Single Product
+Category
+Search
+Cart
+Checkout
+My Account
+Blog
+Single Post
+About
+Contact
+404
+
+```
+
+همه با طراحی کامل.
+
+12. اما همه صفحات باید با Aria Builder ساخته شده باشند
+
+این بسیار مهم است.
+
+صفحه Home نباید Hardcoded باشد.
+
+مثلاً:
+
+```text
+Home
+├── Header
+├── Hero Widget
+├── Category Slider Widget
+├── Product Section
+├── Banner
+├── Product Carousel
+├── Blog Section
+└── Footer
+
+```
+
+تمام این بخش‌ها باید Widget واقعی باشند.
+
+کاربر بتواند روی هر بخش کلیک کند و تنظیمات آن را تغییر دهد.
+
+13. ظاهر اولیه باید نزدیک به Daroochi باشد
+
+در نسخه اول:
+
+**ظاهر، Layout، حس بصری، ساختار و بخش‌های جذاب Daroochi را به عنوان Reference اصلی قرار بده.**
+
+من لینک Daroochi و منابع/فایل‌های مرتبط را در اختیار تو قرار می‌دهم.
+
+آن‌ها را بررسی کن.
+
+[https://rtlr.ir/313334](https://rtlr.ir/313334)
+
+ظاهر و ایده‌های UI را تحلیل کن و نسخه مستقل خودمان را پیاده‌سازی کن.
+
+تمام اجزای لازم باید به صورت Widgetهای قابل ویرایش Aria ساخته شوند.
+
+14. Category Slider بسیار مهم
+
+یکی از بخش‌های جذاب Daroochi نمونه‌ای شبیه این ساختار دارد:
+
+- کارت دسته‌بندی
+- تصویر محصول/دسته
+- Background Shape
+- Hover Animation
+- عنوان دسته
+- تعداد محصول
+- Arrow
+- Slider
+- Responsive Scaling
+- Animation
+
+این بخش را صرفاً به صورت HTML ثابت پیاده نکن.
+
+یک Widget اختصاصی بساز:
+
+Aria Product Category Cards
+
+مثلاً:
+
+```text
+Category Cards
+
+```
+
+تنظیمات:
+
+Content
+
+- Category Source
+- Selected Categories
+- Number of Categories
+- Category Image
+- Category Title
+- Product Count
+- Link
+- Arrow Icon
+
+Style
+
+- Card Width
+- Card Height
+- Border Radius
+- Background
+- Image Size
+- Image Position
+- Title Typography
+- Count Typography
+- Arrow Size
+- Arrow Color
+- Background Shape
+- Hover Background
+
+Animation
+
+- Hover Image Movement
+- Hover Card Movement
+- Hover Opacity
+- Transition Duration
+- Easing
+
+Responsive
+
+- Desktop Columns
+- Tablet Columns
+- Mobile Columns
+
+و این Widget باید به WooCommerce Category واقعی متصل باشد.
+
+مثلاً:
+
+```text
+WooCommerce
+→ Product Categories
+→ مراقبت از مو
+→ 1 محصول
+
+```
+
+اگر کاربر Category جدید بسازد، Widget بتواند آن Category را انتخاب و نمایش دهد.
+
+15. Dynamic WooCommerce
+
+Aria Builder باید به WooCommerce متصل باشد.
+
+Widgetها باید بتوانند داده واقعی WooCommerce را دریافت کنند.
+
+مثلاً:
+
+```text
+Product Title
+Product Image
+Product Price
+Sale Price
+Regular Price
+SKU
+Stock
+Rating
+Reviews
+Categories
+Tags
+Attributes
+Variations
+Brand
+Description
+Short Description
+Gallery
+
+```
+
+همچنین:
+
+```text
+Product Grid
+Product Carousel
+Product Categories
+Related Products
+Upsells
+Cross Sells
+Recently Viewed
+Best Selling
+On Sale
+Featured
+New Products
+
+```
+
+باید Dynamic باشند.
+
+16. افزونه‌های WooCommerce باید بتوانند Widget اضافه کنند
+
+این قسمت بسیار مهم است.
+
+فرض کن یک Plugin WooCommerce نصب شده و برای Elementor Widget اضافه می‌کند.
+
+مثلاً:
+
+```text
+WooCommerce Plugin
+↓
+Elementor Widget
+↓
+Custom Product Widget
+
+```
+
+Aria Builder باید معماری Extensible داشته باشد تا Pluginها بتوانند برای Aria Builder نیز Widget ثبت کنند.
+
+مثلاً API فرضی:
+
+```php
+aria_register_widget(...)
+
+```
+
+یا یک سیستم مشابه استاندارد طراحی کن.
+
+هدف:
+
+هر Plugin بتواند:
+
+```text
+Plugin
+↓
+Aria Widget
+↓
+Content Controls
+↓
+Style Controls
+↓
+Advanced Controls
+
+```
+
+اضافه کند.
+
+17. Theme Settings
+
+قالب باید یک سیستم تنظیمات کامل داشته باشد.
+
+مثلاً:
+
+```text
+Aria Theme Settings
+
+Site Identity
+├── Logo
+├── Mobile Logo
+├── Favicon
+├── Site Title
+└── Tagline
+
+Colors
+├── Primary
+├── Secondary
+├── Text
+├── Background
+├── Border
+└── Accent
+
+Typography
+├── Body
+├── Heading
+├── Button
+└── Menu
+
+Layout
+├── Container Width
+├── Content Width
+├── Sidebar
+└── Spacing
+
+Header
+Footer
+Buttons
+Cards
+Forms
+WooCommerce
+Product
+Archive
+Blog
+Popup
+
+```
+
+18. Global Styles
+
+اگر کاربر:
+
+```text
+Primary Color = Green
+
+```
+
+قرار دهد، Widgetهایی که از Primary Color استفاده می‌کنند باید آن رنگ را دریافت کنند.
+
+مثلاً:
+
+```text
+Button
+Heading
+Icon
+Badge
+Price
+Category Card
+
+```
+
+اما کاربر بتواند در صورت نیاز Override کند.
+
+19. Site Identity واقعی
+
+کاربر باید بتواند لوگوی سایت را از WordPress Media Library انتخاب کند.
+
+مثلاً:
+
+```text
+Appearance
+→ Customize / Aria Settings
+→ Site Identity
+→ Logo
+
+```
+
+سپس Logo در Header واقعی سایت نمایش داده شود.
+
+اگر کاربر لوگو را تغییر داد:
+
+**Header باید خودکار تغییر کند.**
+
+همین موضوع برای:
+
+- Site Name
+- Favicon
+- Colors
+- Fonts
+- Menu
+- Footer
+
+نیز برقرار باشد.
+
+20. WordPress Pages واقعی
+
+کاربر باید بتواند:
+
+```text
+Pages
+→ Add New
+
+```
+
+برگه جدید بسازد.
+
+سپس:
+
+```text
+Edit with Aria Builder
+
+```
+
+را انتخاب کند.
+
+و یک صفحه کاملاً خالی دریافت کند که بتواند با همان Widgetهای Aria آن را طراحی کند.
+
+پس:
+
+**Aria Builder فقط برای Demo Home نیست.**
+
+باید یک Page Builder واقعی باشد.
+
+21. WooCommerce باید کاملاً واقعی بماند
+
+این پروژه نباید WooCommerce را شبیه‌سازی کند.
+
+واقعاً از WooCommerce استفاده کن.
+
+بنابراین:
+
+```text
+Product
+Order
+Customer
+Cart
+Checkout
+Payment
+Coupon
+Shipping
+Tax
+Variation
+Stock
+
+```
+
+باید با WooCommerce واقعی کار کنند.
+
+اگر کاربر سفارش ثبت کرد:
+
+```text
+WooCommerce
+→ Orders
+
+```
+
+باید سفارش واقعی دیده شود.
+
+درگاه‌های WooCommerce نیز باید بتوانند بدون بازنویسی کامل سیستم پرداخت کار کنند.
+
+22. Header و Footer
+
+Header و Footer باید Templateهای قابل ویرایش باشند.
+
+مثلاً:
+
+```text
+Header
+├── Logo
+├── Search
+├── Menu
+├── Cart
+├── Wishlist
+└── Account
+
+```
+
+کاربر بتواند هر Element را انتخاب و ویرایش کند.
+
+مثلاً:
+
+```text
+Search
+→ Width
+→ Height
+→ Placeholder
+→ Icon
+→ Colors
+→ Border
+→ Radius
+
+```
+
+23. Product Template Builder
+
+قالب Single Product باید قابل ویرایش باشد.
+
+مثلاً:
+
+```text
+Single Product
+├── Breadcrumb
+├── Gallery
+├── Product Title
+├── Rating
+├── Price
+├── Stock
+├── Variations
+├── Add To Cart
+├── Wishlist
+├── Description
+├── Tabs
+├── Reviews
+├── Related Products
+└── Upsells
+
+```
+
+کاربر بتواند ترتیب این عناصر را تغییر دهد.
+
+24. Archive Template Builder
+
+برای:
+
+```text
+Shop
+Category
+Tag
+Search
+Brand
+
+```
+
+Templateهای قابل ویرایش داشته باشیم.
+
+مثلاً:
+
+```text
+Archive
+├── Breadcrumb
+├── Title
+├── Description
+├── Filters
+├── Sorting
+├── Product Grid
+└── Pagination
+
+```
+
+25. Blog
+
+Blog نیز باید با Builder هماهنگ باشد.
+
+```text
+Blog Archive
+Single Post
+Category
+Search
+Author
+
+```
+
+26. UI Builder
+
+رابط کاربری Aria Builder باید بسیار زیبا باشد.
+
+حداقل:
+
+```text
+Left Sidebar:
+Widgets
+
+Center:
+Live Preview
+
+Right Sidebar:
+Controls
+
+```
+
+یا اگر برای RTL مناسب‌تر است:
+
+```text
+Right:
+Widgets
+
+Center:
+Preview
+
+Left:
+Controls
+
+```
+
+این موضوع را بر اساس UX واقعی بررسی کن.
+
+UI باید:
+
+- Modern
+- Minimal
+- Fast
+- Smooth
+- Responsive
+- RTL
+- Persian friendly
+
+باشد.
+
+27. Widget Icons
+
+برای هر Widget آیکون اختصاصی و مرتبط داشته باش.
+
+آیکون‌ها:
+
+- مدرن
+- مینیمال
+- یکپارچه
+- واضح
+- قابل تشخیص
+
+باشند.
+
+مثلاً:
+
+Heading → آیکون Heading
+
+Image → آیکون Image
+
+Product → آیکون Shopping Bag
+
+Container → آیکون Layout
+
+Category → آیکون Grid
+
+Button → آیکون Mouse Pointer
+
+28. Drag &amp; Drop
+
+کاربر بتواند:
+
+```text
+Widget
+↓
+Drag
+↓
+Container
+↓
+Drop
+
+```
+
+کند.
+
+همچنین:
+
+- Move
+- Duplicate
+- Delete
+- Copy
+- Paste
+- Navigator
+- Rename
+- Hide
+- Lock
+
+در نظر گرفته شود.
+
+29. Navigator
+
+یک Structure Panel داشته باشیم:
+
+```text
+Home
+├── Header
+├── Hero
+│   ├── Container
+│   │   ├── Heading
+│   │   └── Button
+│
+├── Category Slider
+│
+├── Product Section
+│   ├── Heading
+│   └── Product Grid
+│
+└── Footer
+
+```
+
+کاربر بتواند از اینجا مستقیماً Element را انتخاب کند.
+
+30. ذخیره‌سازی
+
+ساختار Builder باید به شکل قابل توسعه ذخیره شود.
+
+مثلاً:
+
+```json
+{
+  "version": "1.0",
+  "type": "page",
+  "content": [
+    {
+      "type": "container",
+      "settings": {},
+      "children": []
+    }
+  ]
+}
+
+```
+
+معماری JSON باید versioned باشد تا در آینده Migration امکان‌پذیر باشد.
+
+31. Performance
+
+به هیچ عنوان یک Builder سنگین و کند تولید نکن.
+
+هدف:
+
+- Minimal DOM
+- Lazy Loading
+- Code Splitting
+- Optimized Assets
+- CSS فقط در صورت نیاز
+- JS فقط در صورت نیاز
+- Debounced Saving
+- Efficient Preview Rendering
+
+باشد.
+
+32. AI
+
+در معماری Builder از ابتدا امکان AI را در نظر بگیر.
+
+بعداً بتوانیم:
+
+```text
+Create Section
+Improve Section
+Rewrite Text
+Generate Layout
+Change Colors
+Make Responsive
+Create Product Section
+Create Landing Page
+
+```
+
+را با AI انجام دهیم.
+
+اما AI نباید ساختار پروژه را خراب کند.
+
+AI باید JSON Schema استاندارد Aria را تولید/ویرایش کند.
+
+33. مهم: پروژه را مرحله‌ای بساز
+
+از همان ابتدا کل پروژه را یکجا تولید نکن.
+
+ابتدا:
+
+Phase 0
+
+تحلیل دقیق منابعی که من می‌دهم.
+
+من ممکن است این منابع را ارائه کنم:
+
+- Daroochi
+- Elementor
+- Elementor Pro
+- WoodMart
+- WooCommerce
+- Pluginهای WooCommerce
+
+هر منبع را کامل بررسی کن.
+
+Phase 1
+
+ساخت:
+
+```text
+Daroonik Theme
++
+Aria Builder Plugin
+
+```
+
+و نصب روی Localhost.
+
+Phase 2
+
+ساخت:
+
+```text
+Theme Settings
+Site Identity
+Global Colors
+Typography
+Header
+Footer
+
+```
+
+Phase 3
+
+ساخت:
+
+```text
+Container
+Heading
+Text
+Image
+Button
+Icon
+Spacer
+Divider
+
+```
+
+Phase 4
+
+ساخت WooCommerce Widgets.
+
+Phase 5
+
+ساخت Category Card Widget شبیه نمونه جذاب Daroochi.
+
+Phase 6
+
+اضافه کردن Widgetهای بیشتر Elementor.
+
+Phase 7
+
+Elementor Pro Widgets.
+
+Phase 8
+
+Template Builder:
+
+```text
+Header
+Footer
+Single Product
+Product Archive
+Category
+Shop
+Blog
+Post
+Search
+404
+
+```
+
+Phase 9
+
+Responsive + Dynamic Content + Conditions.
+
+Phase 10
+
+AI Builder.
+
+34. اصل مهم توسعه
+
+هر بار که یک قابلیت ساخته می‌شود، باید واقعاً به سیستم وصل شود.
+
+مثلاً اگر Widget Image ساخته شد:
+
+نباید فقط در Demo کار کند.
+
+باید:
+
+```text
+Page
+→ Edit with Aria
+→ Image Widget
+→ Change Image
+→ Save
+→ Refresh
+
+```
+
+و تصویر واقعاً تغییر کند.
+
+همین معیار برای تمام Widgetها اعمال شود.
+
+35. Demo Import
+
+قالب باید بتواند یک Demo کامل را Import کند.
+
+مثلاً:
+
+```text
+Install Theme
+↓
+Install Required Plugin
+↓
+Import Demo
+↓
+Home
+Shop
+Products
+Categories
+Menus
+Theme Settings
+Templates
+
+```
+
+و سایت بلافاصله شبیه Demo شود.
+
+36. هدف نهایی
+
+کاربر باید احساس کند:
+
+> «من یک قالب آماده حرفه‌ای خریده‌ام، ولی تقریباً هیچ محدودیتی برای شخصی‌سازی آن ندارم.»
+
+نه اینکه:
+
+> «یک قالب آماده گرفتم و فقط چند رنگ و بنر را می‌توانم عوض کنم.»
+
+37. معیار موفقیت
+
+در پایان پروژه باید بتوانیم:
+
+1. WordPress را نصب کنیم.
+2. WooCommerce را نصب کنیم.
+3. Daroonik را نصب کنیم.
+4. Demo را Import کنیم.
+5. Home را با Aria Builder باز کنیم.
+6. روی هر بخش کلیک کنیم.
+7. همان Element واقعی انتخاب شود.
+8. Content / Style / Advanced آن تغییر کند.
+9. Save کنیم.
+10. صفحه واقعی WordPress تغییر کند.
+11. Product جدید در WooCommerce اضافه کنیم.
+12. Category جدید بسازیم.
+13. محصول را به Category جدید وصل کنیم.
+14. Category جدید در Widgetهای Dynamic قابل انتخاب باشد.
+15. Logo را تغییر دهیم.
+16. Menu را تغییر دهیم.
+17. رنگ Global را تغییر دهیم.
+18. Font را تغییر دهیم.
+19. Product Template را تغییر دهیم.
+20. سفارش واقعی WooCommerce ثبت کنیم.
+21. سفارش در WooCommerce دیده شود.
+22. درگاه WooCommerce قابل استفاده باشد.
+23. برگه جدید بسازیم.
+24. آن را با Aria Builder طراحی کنیم.
+25. تمام این موارد بدون دستکاری دستی کد سایت کار کنند.
+
+38. دستور بسیار مهم برای تو
+
+قبل از شروع کدنویسی:
+
+**هیچ چیزی را حدس نزن.**
+
+ابتدا منابعی که من می‌فرستم را بررسی کن.
+
+اگر لینک یا فایل دادم:
+
+- ساختار را تحلیل کن
+- قابلیت‌ها را استخراج کن
+- Widgetها را فهرست کن
+- Settings را استخراج کن
+- Architecture را بررسی کن
+- Dependencyها را بررسی کن
+- WooCommerce integration را بررسی کن
+- نقاط قوت را استخراج کن
+- نقاط ضعف را استخراج کن
+
+سپس یک Architecture Document برای Daroonik ارائه بده.
+
+بعد از تأیید معماری، مرحله اول را پیاده‌سازی کن.
+
+39. درباره کپی Daroochi
+
+Daroochi صرفاً به عنوان Reference Design استفاده می‌شود.
+
+هدف:
+
+**بازسازی تجربه و ایده‌های UI با کد مستقل خودمان.**
+
+کد، فایل‌های اختصاصی، لوگو، تصاویر دارای حق نشر، برندینگ یا Assetهای اختصاصی محصول دیگر را مستقیماً کپی نکن.
+
+برای تصاویر Demo می‌توانی در Localhost از Placeholder یا Assetهای موقت استفاده کنی، مگر اینکه من Assetهای مجاز خودمان را ارائه کنم.
+
+40. نتیجه نهایی مورد انتظار
+
+محصول نهایی:
+
+Daroonik
+
+یک WordPress Theme + Aria Builder Plugin است که:
+
+```text
+ظاهر مدرن Daroochi
+        +
+قدرت WordPress
+        +
+WooCommerce واقعی
+        +
+تجربه Elementor
+        +
+Theme Customization شبیه WoodMart
+        +
+Widget System اختصاصی
+        +
+Dynamic WooCommerce
+        +
+Responsive
+        +
+Template Builder
+        +
+AI
+
+```
+
+را در یک اکوسیستم واحد ترکیب می‌کند.
+
+**اول معماری را طراحی کن، سپس مرحله‌به‌مرحله پیاده‌سازی کن.**
+
+در هیچ مرحله‌ای قابلیت Fake یا Mock را به جای قابلیت واقعی قرار نده، مگر اینکه صریحاً برای Prototype درخواست شده باشد.
+
+هدف نهایی یک سیستم واقعی، قابل توسعه و قابل انتشار تجاری است.
+
+وقتی ویجیت هارو اضافه میکنی تمام تمام تمام تنظیمات اون ویجیت در محتوا استایل و پیشرفته موجود باشه از طرفی معماری کامل صفحه ساز هم از المنتور بگیر
+
+همچنین برایبخش هایی از سایت داروچی که المان جذاب دارن ولی ویجیت آن در المنتور نیست یک ویجیت خوب بساز مثل این بخش
+
+&lt;div class="swiper-slide !flex !justify-center px-2 lg:px-0" style="width: 275.667px; margin-left: 5px;"&gt;&lt;a class="group block py-15" dir="rtl" href="/product-category/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%db%8c-%d9%88-%d8%a8%d9%87%d8%af%d8%a7%d8%b4%d8%aa%db%8c/%d9%85%d8%b1%d8%a7%d9%82%d8%a8%d8%aa-%d8%a7%d8%b2-%d9%85%d9%88"&gt;&lt;div class="   relative cursor-pointer   h-[170px] w-full origin-center scale-[0.6]   min-[420px]:scale-[0.78]   min-[768px]:h-[220px] min-[768px]:w-[0px] min-[768px]:scale-100   "&gt;&lt;div class="   absolute bottom-0 left-1/2   h-[230px] w-[230px] -translate-x-1/2   rounded-[28px] bg-[#EFF0F4]   transition-all duration-300   "&gt;&lt;/div&gt;&lt;div class="   absolute left-1/2 top-[-10px]   h-[200px] w-[230px] -translate-x-1/2   rounded-t-[28px]   opacity-0   transition-all duration-300   group-hover:top-[-40px]   group-hover:opacity-100   "&gt;&lt;div class="   h-full w-full rounded-t-[25px]   bg-[linear-gradient(180deg,color-mix(in_srgb,var(--primary-color)_45%,white)_0%,var(--primary-color)_55%,color-mix(in_srgb,var(--primary-color)_85%,black)_100%)]   shadow-[inset_0px_0px_1px_3px_rgba(255,255,255,0.6)]   "&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="   absolute right-[-160px] bottom-0 z-20   h-[180px] w-[320px]   bg-contain bg-center bg-no-repeat   transition-transform duration-300 ease-out   group-hover:-translate-y-4   " style="background-image:url('/images/product-category-slider.png')"&gt;&lt;div class="   absolute left-1/2 top-[-35px]   h-[140px] w-[180px] -translate-x-1/2   overflow-hidden   "&gt;&lt;img alt="مراقبت از مو" loading="lazy" decoding="async" data-nimg="fill" class="object-contain" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" sizes="180px" srcset="/_next/image?url=https%3A%2F%[2Fdaroochi.nexbay.co](http://2Fdaroochi.nexbay.co)%2Fwp-content%2Fuploads%2F2026%2F05%2Fdbfe46ad1e334507498446a16b96b6ed4ee0c6d9-1.png&amp;amp;w=32&amp;amp;q=75 32w, /_next/image?url=https%3A%2F%[2Fdaroochi.nexbay.co](http://2Fdaroochi.nexbay.co)%2Fwp-content%2Fuploads%2F2026%2F05%2Fdbfe46ad1e334507498446a16b96b6ed4ee0c6d9-1.png&amp;amp;w=48&amp;amp;q=75 48w, /_next/image?url=https%3A%2F%[2Fdaroochi.nexbay.co](http://2Fdaroochi.nexbay.co)%2Fwp-content%2Fuploads%2F2026%2F05%2Fdbfe46ad1e334507498446a16b96b6ed4ee0c6d9-1.png&amp;amp;w=64&amp;amp;q=75 64w, /_next/image?url=https%3A%2F%[2Fdaroochi.nexbay.co](http://2Fdaroochi.nexbay.co)%2Fwp-content%2Fuploads%2F2026%2F05%2Fdbfe46ad1e334507498446a16b96b6ed4ee0c6d9-1.png&amp;amp;w=96&amp;amp;q=75 96w, /_next/image?url=https%3A%2F%[2Fdaroochi.nexbay.co](http://2Fdaroochi.nexbay.co)%2Fwp-content%2Fuploads%2F2026%2F05%2Fdbfe46ad1e334507498446a16b96b6ed4ee0c6d9-1.png&amp;amp;w=128&amp;amp;q=75 128w, /_next/image?url=https%3A%2F%[2Fdaroochi.nexbay.co](http://2Fdaroochi.nexbay.co)%2Fwp-content%2Fuploads%2F2026%2F05%2Fdbfe46ad1e334507498446a16b96b6ed4ee0c6d9-1.png&amp;amp;w=256&amp;amp;q=75 256w, /_next/image?url=https%3A%2F%[2Fdaroochi.nexbay.co](http://2Fdaroochi.nexbay.co)%2Fwp-content%2Fuploads%2F2026%2F05%2Fdbfe46ad1e334507498446a16b96b6ed4ee0c6d9-1.png&amp;amp;w=384&amp;amp;q=75 384w, /_next/image?url=https%3A%2F%[2Fdaroochi.nexbay.co](http://2Fdaroochi.nexbay.co)%2Fwp-content%2Fuploads%2F2026%2F05%2Fdbfe46ad1e334507498446a16b96b6ed4ee0c6d9-1.png&amp;amp;w=640&amp;amp;q=75 640w, /_next/image?url=https%3A%2F%[2Fdaroochi.nexbay.co](http://2Fdaroochi.nexbay.co)%2Fwp-content%2Fuploads%2F2026%2F05%2Fdbfe46ad1e334507498446a16b96b6ed4ee0c6d9-1.png&amp;amp;w=750&amp;amp;q=75 750w, /_next/image?url=https%3A%2F%[2Fdaroochi.nexbay.co](http://2Fdaroochi.nexbay.co)%2Fwp-content%2Fuploads%2F2026%2F05%2Fdbfe46ad1e334507498446a16b96b6ed4ee0c6d9-1.png&amp;amp;w=828&amp;amp;q=75 828w, /_next/image?url=https%3A%2F%[2Fdaroochi.nexbay.co](http://2Fdaroochi.nexbay.co)%2Fwp-content%2Fuploads%2F2026%2F05%2Fdbfe46ad1e334507498446a16b96b6ed4ee0c6d9-1.png&amp;amp;w=1080&amp;amp;q=75 1080w, /_next/image?url=https%3A%2F%[2Fdaroochi.nexbay.co](http://2Fdaroochi.nexbay.co)%2Fwp-content%2Fuploads%2F2026%2F05%2Fdbfe46ad1e334507498446a16b96b6ed4ee0c6d9-1.png&amp;amp;w=1200&amp;amp;q=75 1200w, /_next/image?url=https%3A%2F%[2Fdaroochi.nexbay.co](http://2Fdaroochi.nexbay.co)%2Fwp-content%2Fuploads%2F2026%2F05%2Fdbfe46ad1e334507498446a16b96b6ed4ee0c6d9-1.png&amp;amp;w=1920&amp;amp;q=75 1920w, /_next/image?url=https%3A%2F%[2Fdaroochi.nexbay.co](http://2Fdaroochi.nexbay.co)%2Fwp-content%2Fuploads%2F2026%2F05%2Fdbfe46ad1e334507498446a16b96b6ed4ee0c6d9-1.png&amp;amp;w=2048&amp;amp;q=75 2048w, /_next/image?url=https%3A%2F%[2Fdaroochi.nexbay.co](http://2Fdaroochi.nexbay.co)%2Fwp-content%2Fuploads%2F2026%2F05%2Fdbfe46ad1e334507498446a16b96b6ed4ee0c6d9-1.png&amp;amp;w=3840&amp;amp;q=75 3840w" src="/_next/image?url=https%3A%2F%[2Fdaroochi.nexbay.co](http://2Fdaroochi.nexbay.co)%2Fwp-content%2Fuploads%2F2026%2F05%2Fdbfe46ad1e334507498446a16b96b6ed4ee0c6d9-1.png&amp;amp;w=3840&amp;amp;q=75"&gt;&lt;div class="   pointer-events-none   absolute inset-x-0 bottom-0 z-10   h-[80px]   bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.65)_65%,rgba(255,255,255,0.9)_100%)]   "&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="   absolute bottom-[10px] left-1/2   h-[64px] w-[170px] -translate-x-1/2   flex items-center justify-between gap-1   "&gt;&lt;div class="min-w-0 flex flex-col items-start justify-center text-right"&gt;&lt;h3 class="line-clamp-1 text-[16px] font-bold leading-6 text-(--primary-text-color)"&gt;مراقبت از مو&lt;/h3&gt;&lt;p class="mt-1 text-[14px] font-medium text-(--secondary-text-color)"&gt;1&lt;!-- --&gt; محصول&lt;/p&gt;&lt;/div&gt;&lt;span class="   flex h-7 w-7 shrink-0 items-center justify-end   text-(--secondary-text-color)   transition-transform duration-300   group-hover:-translate-x-1   "&gt;&lt;svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left" aria-hidden="true"&gt;&lt;path d="m15 18-6-6 6-6"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;&lt;/div&gt;
+
+
+
+فایل های ووکامرس و المنتور و المنتور پرو و وودمارت در گیت هابم:
+
+- [https://github.com/ariagh1386atomv1/-/releases/download/woodmart/woodmart-fa.zip](https://github.com/ariagh1386atomv1/-/releases/download/woodmart/woodmart-fa.zip)
+- [https://github.com/ariagh1386atomv1/-/blob/main/elementor-pro.zip](https://github.com/ariagh1386atomv1/-/blob/main/elementor-pro.zip)
+- [https://github.com/ariagh1386atomv1/-/blob/main/elementor.3.33.5.zip](https://github.com/ariagh1386atomv1/-/blob/main/elementor.3.33.5.zip)
+- [https://github.com/ariagh1386atomv1/-/blob/main/woocommerce.zip](https://github.com/ariagh1386atomv1/-/blob/main/woocommerce.zip)
+- [https://github.com/ariagh1386atomv1/-/blob/main/woodmart-core.zip](https://github.com/ariagh1386atomv1/-/blob/main/woodmart-core.zip)
